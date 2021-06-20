@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css" />
+  <title>Avalara Assignment</title>
+</head>
+
+<body>
+  <a href="/story/0">Back to the start</a>
+  <div class="grid-container">
+    <div></div>
+    <div>
+      <% if(resObj.data.children.top) { %>
+        <a href=/story/<%= resObj.data.children.top.id %>><%= resObj.data.children.top.message %></a>
+      <% } else { %>
+        <form action="/story" method="POST">
+          <input type="text" name="message">
+          <input type="hidden" name="parentId" value=<%= resObj.data.id %>>
+          <input type="hidden" name="position" value="top">
+          <br/>
+          <button type="submit">Submit</button>
+        </form>
+      <% } %>
+    </div>
+    <div></div>
+    <div>
+      <% if(resObj.data.children.left) { %>
+        <a href=/story/<%= resObj.data.children.left.id %>><%= resObj.data.children.left.message %></a>
+      <% } else { %>
+        <form action="/story" method="POST">
+          <input type="text" name="message">
+          <input type="hidden" name="parentId" value=<%= resObj.data.id %>>
+          <input type="hidden" name="position" value="left">
+          <br/>
+          <button type="submit">Submit</button>
+        </form>
+      <% } %>
+    </div>
+    <div><%= resObj.data.message %></div>
+    <div>
+      <% if(resObj.data.children.right) { %>
+        <a href=/story/<%= resObj.data.children.right.id %>><%= resObj.data.children.right.message %></a>
+      <% } else { %>
+        <form action="/story" method="POST">
+          <input type="text" name="message">
+          <input type="hidden" name="parentId" value=<%= resObj.data.id %>>
+          <input type="hidden" name="position" value="right">
+          <br/>
+          <button type="submit">Submit</button>
+        </form>
+      <% } %>
+    </div>
+    <div></div>
+    <div>
+      <% if(resObj.data.children.bottom) { %>
+        <a href=/story/<%= resObj.data.children.bottom.id %>><%= resObj.data.children.bottom.message %></a>
+      <% } else { %>
+        <form action="/story" method="POST">
+          <input type="text" name="message">
+          <input type="hidden" name="parentId" value=<%= resObj.data.id %>>
+          <input type="hidden" name="position" value="bottom">
+          <br/>
+          <button type="submit">Submit</button>
+        </form>
+      <% } %>
+    </div>
+    <div></div>
+</body>
+
+</html>
