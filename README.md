@@ -8,7 +8,7 @@ In the project directory, you can run:
 `npm install`
 
 * Start local server: 
-`npm start`
+`node app.js`
 
 ## Entry point for project
 http://localhost:8900/story
